@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="employee" type="com.codewith.databinding.model.Employee"/>
+    </data>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <ImageView
+                android:id="@+id/imgProf"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="@null"
+                bind:imageUrl="@{employee.profImage}"
+              />
+        <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{employee.name}"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+    </LinearLayout>
+</layout>
