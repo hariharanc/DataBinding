@@ -25,4 +25,13 @@ class EmployeeViewModel(val context: Context) : ViewModel() {
         return employeeList
     }
 
+    fun addEmployee() {
+        employeeList.add(
+            Employee(
+                "name" + employeeList.size.toString(),
+                "https://pbs.twimg.com/profile_images/446522135721164800/pdVA44as.jpeg"
+            )
+        )
+    }
+
 }
