@@ -121,6 +121,8 @@ android:onClick="@{handlers::onClickFriend}
 class MyHandlers {
     fun onClickFriend(view: View) { ... }
 } 
+
+
  
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
@@ -158,4 +160,23 @@ class Presenter {
     </LinearLayout>
 </layout>
 ````
+**Databinding Image Loading Glide**<br/>
+**XML Class Specification**<br/>
+`bind:imageUrl="@{employee.profImage}"`<br/>
+
+`imageUrl` is bindingAdapter to identifying bind value in xml<br/>
+**Kotlin**
+````
+ companion object {
+        @BindingAdapter("imageUrl")
+        @JvmStatic
+        fun setImageUrl(imageView: ImageView,url: String) {
+            Glide.with(imageView).load(url)
+                .apply(RequestOptions().placeholder(R.drawable.add_photo_female).error(R.drawable.add_photo_female))
+                .into(imageView)
+        }
+    }
+    
+ ````
+
 
